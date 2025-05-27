@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { FaRegCopy } from "react-icons/fa";
 
 function Copy() {
@@ -51,8 +51,13 @@ function Strength() {
   );
 }
 
+
 export default function Card() {
   const rangeRef = useRef(null)
+
+  useEffect(() => {
+    rangeRef.current.value;
+  }, [rangeRef]);
 
   return (
     <>
