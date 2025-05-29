@@ -1,83 +1,52 @@
-import { useRef, useEffect } from "react";
-import { FaRegCopy } from "react-icons/fa";
+import Strength from "./Strength";
+import Button from "./Button";
+import Copy from "./Copy";
+import { useState } from "react";
 
-function Copy() {
-  return (
-    <>
-        <h1>Password Generation</h1>
-      <div className="pass-container">
-        <h2>PASSWORD</h2>
-        <FaRegCopy className="copy-icon" />
-      </div>
-    </>
-  );
-}
-
-function Button() {
-  function generatePasscode() {
-    let text = "";
-    let characterSet =
-      "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*";
-    for (let i = 0; i < range; i++) {
-      text += characterSet.charAt(
-        Math.floor(Math.random() * characterSet.length)
-      );
-      return text;
-    }
-  }
-
-  return (
-    <>
-      <button onClick={generatePasscode}>
-        GENERATE <span>⇢</span>
-      </button>
-    </>
-  );
-}
-
-function Strength() {
-  return (
-    <div className="pass-strength">
-      <p className="strength-text">STRENGTH</p>
-
-      <div className="strength-bar">
-        <p>MEDIUM</p>
-        <div className="bar"></div>
-        <div className="bar"></div>
-        <div className="bar"></div>
-        <div className="bar"></div>
-      </div>
-    </div>
-  );
-}
-
+// generate a password based on the checked values
+// copy the password to the clipboard
 
 export default function Card() {
-  const rangeRef = useRef(null)
-
-  useEffect(() => {
-    rangeRef.current.value;
-  }, [rangeRef]);
+  const [range, setRange] = useState(0);
+  const [strength, setStrength] = useState({
+    uppercase: false,
+    lowercase: false,
+    numbers: false,
+    symbols: false,
+  });
+  const [password, setPassword] = useState("");
 
   return (
     <>
-      <Copy />
-
+      <Copy password={password} />
       <div className="card">
         {/* range spot */}
         <div className="input-num">
           <h3>Character Length</h3>
-          <p>{ rangeRef.current.value}</p>
+          <p>{range}</p>
         </div>
-        <input type="range" name="password-range" className="range"  ref={rangeRef} onChange={(e) => {
-        rangeRef.current.value = e.target.value} }/> <br />
-       
+        <input
+          type="range"
+          name="password-range"
+          className="range"
+          value={range}
+          onChange={(e) => {
+            setRange(e.target.value);
+          }}
+          min={0}
+          max={20}
+        />{" "}
+        <br />
         {/* all check list */}
         <input
           type="checkbox"
           name="Uppercase-letters"
           style={{ accentColor: "#aff3c1" }}
           id="one"
+          checked={strength.uppercase}
+          onChange={(e) =>
+            setStrength({ ...strength, uppercase: e.target.checked })
+          }
         />
         <label className="test" htmlFor="one">
           Include Uppercase Letters
@@ -88,9 +57,13 @@ export default function Card() {
           name="Lowercase-letters"
           style={{ accentColor: "#aff3c1" }}
           id="two"
+          checked={strength.lowercase}
+          onChange={(e) =>
+            setStrength({ ...strength, lowercase: e.target.checked })
+          }
         />
         <label className="test" htmlFor="two">
-          Include Uppercase Letters
+          Include Lowercase Letters
         </label>
         <br />
         <input
@@ -98,9 +71,13 @@ export default function Card() {
           name="Numbers"
           style={{ accentColor: "#aff3c1" }}
           id="three"
+          checked={strength.numbers}
+          onChange={(e) =>
+            setStrength({ ...strength, numbers: e.target.checked })
+          }
         />
         <label className="test" htmlFor="three">
-          Include Uppercase Letters
+          Include Numbers
         </label>
         <br />
         <input
@@ -108,12 +85,20 @@ export default function Card() {
           name="symbols"
           style={{ accentColor: "#aff3c1" }}
           id="four"
+          checked={strength.symbols}
+          onChange={(e) =>
+            setStrength({ ...strength, symbols: e.target.checked })
+          }
         />
         <label className="test" htmlFor="four">
-          Include Uppercase Letters
+          Include Symbols
         </label>
-        <Strength />
-        <Button />
+        <Strength strength={strength} />
+        <Button
+          characterLength={range}
+          strength={strength}
+          setPassword={setPassword}
+        />
       </div>
     </>
   );

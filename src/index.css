@@ -17,40 +17,40 @@ body {
 
 /* ///////////Copy container/////////// */
 
-h1{
+h1 {
   text-align: center;
   color: #807D8D;
   font-size: large;
 }
 
-.pass-container{
-  display: flex ;
+.pass-container {
+  display: flex;
   justify-content: space-between;
   align-items: center;
   padding-inline: 1rem;
   background-color: #24232B;
   margin-bottom: 1.5rem;
-  
+
 }
 
-.copy-icon{
+.copy-icon {
   color: #aff3c1;
   cursor: pointer;
 }
 
-h2{
+h2 {
   color: #525059;
 }
 
 /* ///////////// card /////////////// */
-.card{
+.card {
   background-color: #24232B;
   padding-inline: 1rem;
 }
 
 /* /////////// input range ////////// */
 
-.input-num{
+.input-num {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -62,11 +62,11 @@ h2{
 }
 
 
-h3{
+h3 {
   color: white;
 }
 
-.range{
+.range {
   accent-color: #49f878;
   width: 20rem;
   margin-bottom: 1rem;
@@ -76,9 +76,10 @@ h3{
 
 
 /* ////////list & checkbox/////////// */
-.test{
+.test {
   color: white;
-  padding: 0.7rem;
+  padding: 0.5rem;
+  display: inline-block;
 }
 
 
@@ -87,7 +88,7 @@ h3{
 
 
 /* //// password strength section //// */
-.pass-strength{
+.pass-strength {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -96,31 +97,31 @@ h3{
   margin: 1rem 0;
 }
 
-.strength-bar{
+.strength-bar {
   display: flex;
   justify-content: space-around;
   align-items: center;
   gap: 0.3rem;
 }
 
-.strength-bar p{
+.strength-bar p {
   color: white;
 
 }
 
-.strength-text{
+.strength-text {
   color: #7D7A8B;
   padding: 0.5rem;
   font-size: small;
 }
 
 
-.bar{
+.bar {
   width: 0.2rem;
   height: 0.8rem;
   border: 1px solid white;
 }
- 
+
 
 
 
@@ -137,16 +138,18 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
 @media (prefers-color-scheme: light) {
- 
+
   button {
     background-color: #A4FFAF;
   }
