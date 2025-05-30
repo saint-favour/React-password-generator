@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+
 export default function Button({ characterLength, strength, setPassword }) {
   const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const lowercase = "abcdefghijklmnopqrstuvwxyz";
@@ -8,7 +10,20 @@ export default function Button({ characterLength, strength, setPassword }) {
   const checkCount = strengthKeys.filter((key) => strength[key]).length;
 
   function generatePasscode() {
-    if (characterLength === 0 || checkCount === 0) return;
+    if (characterLength === 0 || checkCount === 0){
+      Swal.fire({
+        icon: "warning",
+        title: "Length or input not chosen",
+        timer: 2000,
+        showConfirmButton: false,
+        timerProgressBar: true,
+        heightAuto: false,
+        toast: true,
+        position: "top",
+      });
+
+      return;
+    } 
 
     let pwd = "";
     for (let i = 0; i < characterLength; i++) {
