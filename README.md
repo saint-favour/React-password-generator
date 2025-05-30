@@ -9,7 +9,7 @@ This a password generator bulit React, it randomize string of data and display i
 
 
 ### Links
-- Live Site URL: (password-generatoro.netlify.app)
+- Live Site URL: ([password-generatoro.netlify.app](https://password-generatoro.netlify.app/))
 
 
 
