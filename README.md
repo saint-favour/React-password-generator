@@ -1,12 +1,26 @@
-# React + Vite
+# Password Generator 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This a password generator bulit React, it randomize string of data and display it! 
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Screenshot 
+![image](https://github.com/user-attachments/assets/2e63b5b6-09fc-4efe-b13e-a86bc6d4df72)
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Links
+- Live Site URL: ([password-generatoro.netlify.app](https://password-generatoro.netlify.app/))
+
+
+
+### Built with
+- React + Vite
+
+
+## Author 
+- Frontend Mentor - [@saint-favour](https://www.frontendmentor.io/profile/saint-favour)
+- Twitter/X - [@SaintAmaechi](https://x.com/SaintAmaechi)
+
+## Setup
+use pnpm as package maneger 
+pnpm run dev to start the server 
